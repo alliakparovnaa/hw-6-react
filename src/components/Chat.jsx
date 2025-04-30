@@ -1,10 +1,10 @@
 import React from 'react'
 import ChatItem from './ChatItem'
 
-const Chat = ({ messages }) => {
+const Chat = (props) => {
   return (
     <div >
-    {messages.map((item) => (
+    {props.sms.map((item) => (
       <ChatItem text={item.text} time={item.time} />
     ))}
   </div>

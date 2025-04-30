@@ -1,10 +1,10 @@
 import React from "react";
 
-const ChatItem = ({ text, time }) => {
+const ChatItem = (props) => {
   return (
     <div>
-      <p>{text}</p> 
-      <p>({time})</p>
+      <p>{props.text}</p> 
+      <p>{props.time}</p>
     </div>
   );
 };

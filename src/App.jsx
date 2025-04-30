@@ -5,20 +5,20 @@ import ChatInput from "./components/ChatInput";
 import UserInfo from "./components/UserInfo";
 
 function App() {
-  const [messages, setMessages] = useState([]);
+  const [sms, setSms] = useState([]);
 
-  const addMessage = (text) => {
+  const addSmsHandler = (text) => {
     const newMessage = {
-      text: "text",
+      text: text,
       time: new Date().toLocaleTimeString(),
     };
-    setMessages([...messages, newMessage]);
+    setSms([...sms, newMessage]);
   };
   return (
     <div>
       <UserInfo />
-      <Chat messages={messages} />
-      <ChatInput onSend={addMessage} />
+      <Chat sms={sms} />
+      <ChatInput smsSubmit={addSmsHandler} />
     </div>
   );
 }

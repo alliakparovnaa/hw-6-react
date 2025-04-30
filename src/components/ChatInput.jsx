@@ -1,24 +1,23 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 
-const ChatInput = ({ onSend }) => {
-    const [text, setText] = useState("");
+const ChatInput = (props) => {
+  const [text, setText] = useState("");
 
-    const handleSend = () => {
-      if (text === "") return;
-      onSend(text);
-      setText("");
-    };
-  
+  const massageHandler = () => {
+    props.smsSubmit(text);
+    setText("");
+  };
+
   return (
-    <div >
-    <input
-      value={text}
-      onChange={(e) => setText(e.target.value)}
-      placeholder="Напишите сообщение..."
-    />
-    {text !== "" && <button onClick={handleSend}>Отправить</button>}
-  </div>
-  )
-}
+    <div>
+      <input
+        value={text}
+        onChange={(e) => setText(e.target.value)}
+        placeholder="Напишите сообщение..."
+      />
+      {text !== "" ? <button onClick={massageHandler}>Отправить</button> : null}
+    </div>
+  );
+};
 
-export default ChatInput
+export default ChatInput;
